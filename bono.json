@@ -1,0 +1,16 @@
+[   {
+  "id": 1,
+  "name": "Madrugon",
+  "description": "15% de descuento",
+  "product_id": 1,
+  "valid_since": 1609864739000,
+  "valid_until": 1609864739000
+},
+ {
+  "id": 2,
+  "name": "Black Friday",
+  "description": "30% de descuento",
+  "product_id": 3,
+  "valid_since": 1609864739000,
+  "valid_until": 1609864739000
+}]
