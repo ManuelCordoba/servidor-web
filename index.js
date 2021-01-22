@@ -24,6 +24,23 @@ app.get('/products', (req, res) => {
 }
 
 });
+app.get('/product', function(req, res) {
+    function fail() {
+        res.set('WWW-Authenticate', authorization.format('Basic'));
+        res.status(401).send();
+    }
+    var auth = authorization.parse(req.get('authorization'));
+     if (auth.scheme !== 'Basic') {
+        res.status(401).send();
+    }else{
+    var [us, pw] = Buffer.from(auth.token, 'base64').toString().split(':', 2);
+    if (us !== 'admin') {
+        res.status(401).send();
+    }else{
+    let result = products.filter(item => item.id===parseInt(req.query.id));
+    res.send(result);}
+}
+  });
 
 app.listen('3000', () => {
     console.log('Listening on port 3000');
