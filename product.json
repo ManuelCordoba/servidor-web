@@ -1,4 +1,16 @@
 [{
   "id": 1,
-  "name": "Cargador"
+  "name": "Apple Watch Serie 3"
+},
+{
+  "id": 2,
+  "name": "xiaomi redmi note 8"
+},
+{
+  "id": 3,
+  "name": "Audifonos bluetooth"
+},
+{
+  "id": 4,
+  "name": "Amazon Echo Dot"
 }]

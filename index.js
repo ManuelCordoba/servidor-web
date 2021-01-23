@@ -95,6 +95,7 @@ app.get('/bono', function(req, res) {
     }else{
     var bono = req.body.bono;
     bonos.push(JSON.parse(bono));
+    //guarda los cambios en el archivo
     fs.writeFile("bono.json", JSON.stringify(bonos), function(err) {
         if (err) {
           return console.log(err);
@@ -103,6 +104,28 @@ app.get('/bono', function(req, res) {
       });}
     }
  
+});
+
+app.post('/getValidBono', function (req, res) {
+    function fail() {
+        res.set('WWW-Authenticate', authorization.format('Basic'));
+        res.status(401).send();
+    }
+    var auth = authorization.parse(req.get('authorization'));
+     if (auth.scheme !== 'Basic') {
+        res.status(401).send();
+    }else{
+    var [us, pw] = Buffer.from(auth.token, 'base64').toString().split(':', 2);
+    if (us !== 'customer') {
+        res.status(401).send();
+    }else{
+    var id = req.body.id;
+    var n = Date.now();
+    let result = bonos.filter(item => item.product_id === parseInt(id));
+    result = result.filter(item => item.valid_since <= parseInt(n) && item.valid_until >= parseInt(n));
+        res.send(result);}
+    }
+    
 });
 app.listen('3000', () => {
     console.log('Listening on port 3000');
