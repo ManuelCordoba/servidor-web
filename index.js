@@ -6,6 +6,7 @@ const request = require('request');
 const async = require('async');
 var products = require('./product.json'); 
 var bonos = require('./bono.json'); 
+var fs = require('fs');
 
 
 app.use(body_parser.urlencoded({extended:true}));
@@ -78,6 +79,31 @@ app.get('/bono', function(req, res) {
     res.send(result);}
 }
   });
+
+  app.post('/newBono', function (req, res) {
+    function fail() {
+        res.set('WWW-Authenticate', authorization.format('Basic'));
+        res.status(401).send();
+    }
+    var auth = authorization.parse(req.get('authorization'));
+     if (auth.scheme !== 'Basic') {
+        res.status(401).send();
+    }else{
+    var [us, pw] = Buffer.from(auth.token, 'base64').toString().split(':', 2);
+    if (us !== 'admin') {
+        res.status(401).send();
+    }else{
+    var bono = req.body.bono;
+    bonos.push(JSON.parse(bono));
+    fs.writeFile("bono.json", JSON.stringify(bonos), function(err) {
+        if (err) {
+          return console.log(err);
+        }    
+        res.send({"Mensaje":"Se ha creado correctamente el bono"});
+      });}
+    }
+ 
+});
 app.listen('3000', () => {
     console.log('Listening on port 3000');
 });
