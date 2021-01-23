@@ -198,7 +198,7 @@
 			"response": []
 		},
 		{
-			"name": "validar bono por id",
+			"name": "validar bono  disponibles por id de producto",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -228,14 +228,58 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/getValidBono",
+					"raw": "http://localhost:3000/getValidBonoByProduct",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"getValidBono"
+						"getValidBonoByProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validar disponibilidad de bono ",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "customer",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/getValidBonoById",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getValidBonoById"
 					]
 				}
 			},
