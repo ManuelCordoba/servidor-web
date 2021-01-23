@@ -198,7 +198,7 @@
 			"response": []
 		},
 		{
-			"name": "validar bono  disponibles por id de producto",
+			"name": "validar bonos disponibles por id de producto",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -222,7 +222,7 @@
 					"urlencoded": [
 						{
 							"key": "id",
-							"value": "4",
+							"value": "1",
 							"type": "text"
 						}
 					]
@@ -266,7 +266,7 @@
 					"urlencoded": [
 						{
 							"key": "id",
-							"value": "4",
+							"value": "3",
 							"type": "text"
 						}
 					]

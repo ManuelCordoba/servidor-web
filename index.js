@@ -150,7 +150,6 @@ app.post('/getValidBonoById', function (req, res) {
             var n = Date.now();
             let result = bonos.filter(item => item.id === parseInt(id));
             result = result.filter(item => item.valid_since <= parseInt(n) && item.valid_until >= parseInt(n));
-            console.log(result.length);
             if (result.length == 0) { res.send({ "mensaje": "Este bono no esta disponible" }); }
             else {
                 res.send({ "mensaje": "Este bono si esta disponible" });
