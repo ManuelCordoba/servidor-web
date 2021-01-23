@@ -1,45 +1,45 @@
 [
-  {
-    "id": 1,
-    "name": "Madrugon",
-    "description": "15% de descuento",
-    "product_id": 1,
-    "valid_since": 1611286267000,
-    "valid_until": 1616211067000
-  },
-  {
-    "id": 2,
-    "name": "Black Friday",
-    "description": "30% de descuento",
-    "product_id": 1,
-    "valid_since": 1604287867000,
-    "valid_until": 1605843067000
-  },
-  {
-    "id": 3,
-    "name": "Trasnochon",
-    "description": "10% de descuento",
-    "product_id": 1,
-    "valid_since": 1611286267000,
-    "valid_until": 1611977467000
-  }
-  ,
-  {
-    "id": 3,
-    "name": "Fan Xiaomi",
-    "description": "15% de descuento en xiaomi redmi note 8",
-    "product_id": 2,
-    "valid_since": 1611286267000,
-    "valid_until": 1611977467000
-  }
-  ,
-  {
-    "id": 3,
-    "name": "Amazon Smart",
-    "description": "10% de descuento altavoz echo dot",
-    "product_id": 4,
-    "valid_since": 1611286267000,
-    "valid_until": 1611977467000
-  }
-  
+    {
+        "id": 1,
+        "name": "Madrugon",
+        "description": "15% de descuento",
+        "product_id": 1,
+        "valid_since": 1611286267000,
+        "valid_until": 1616211067000
+    },
+    {
+        "id": 2,
+        "name": "Black Friday",
+        "description": "30% de descuento",
+        "product_id": 1,
+        "valid_since": 1604287867000,
+        "valid_until": 1605843067000
+    },
+    {
+        "id": 3,
+        "name": "Trasnochon",
+        "description": "10% de descuento",
+        "product_id": 1,
+        "valid_since": 1611286267000,
+        "valid_until": 1611977467000
+    },
+    {
+        "id": 3,
+        "name": "Fan Xiaomi",
+        "description": "15% de descuento en xiaomi redmi note 8",
+        "product_id": 2,
+        "valid_since": 1611286267000,
+        "valid_until": 1611977467000
+    },
+    {
+        "id": 3,
+        "name": "Amazon Smart",
+        "description": "10% de descuento altavoz echo dot",
+        "product_id": 4,
+        "valid_since": 1611286267000,
+        "valid_until": 1611977467000
+    },
+    {
+        "nombre": "manuel"
+    }
 ]

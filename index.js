@@ -84,33 +84,6 @@ app.get('/bono', function (req, res) {
     }
 });
 
-app.post('/newBono', function (req, res) {
-    function fail() {
-        res.set('WWW-Authenticate', authorization.format('Basic'));
-        res.status(401).send();
-    }
-    var auth = authorization.parse(req.get('authorization'));
-    if (auth.scheme !== 'Basic') {
-        res.status(401).send();
-    } else {
-        var [us, pw] = Buffer.from(auth.token, 'base64').toString().split(':', 2);
-        if (us !== 'admin') {
-            res.status(401).send();
-        } else {
-            var bono = req.body.bono;
-            bonos.push(JSON.parse(bono));
-            //guarda los cambios en el archivo
-            fs.writeFile("bono.json", JSON.stringify(bonos), function (err) {
-                if (err) {
-                    return console.log(err);
-                }
-                res.send({ "Mensaje": "Se ha creado correctamente el bono" });
-            });
-        }
-    }
-
-});
-
 app.post('/getValidBonoByProduct', function (req, res) {
     function fail() {
         res.set('WWW-Authenticate', authorization.format('Basic'));
@@ -155,6 +128,30 @@ app.post('/getValidBonoById', function (req, res) {
                 res.send({ "mensaje": "Este bono si esta disponible" });
             }
         }
+    }
+
+});
+app.post('/newBono', function (req, res) {
+    function fail() {
+        res.set('WWW-Authenticate', authorization.format('Basic'));
+        res.status(401).send();
+    }
+    var auth = authorization.parse(req.get('authorization'));
+     if (auth.scheme !== 'Basic') {
+        res.status(401).send();
+    }else{
+    var [us, pw] = Buffer.from(auth.token, 'base64').toString().split(':', 2);
+    if (us !== 'admin') {
+        res.status(401).send();
+    }else{
+    var bono = req.body.bono;
+    bonos.push(JSON.parse(bono));
+    fs.writeFile("bono.json", JSON.stringify(bonos), function(err) {
+        if (err) {
+          return console.log(err);
+        }    
+        res.send({"Mensaje":"Se ha creado correctamente el bono"});
+      });}
     }
 
 });

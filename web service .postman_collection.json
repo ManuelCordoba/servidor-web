@@ -178,7 +178,7 @@
 					"urlencoded": [
 						{
 							"key": "bono",
-							"value": "'{\n  \"id\": 3,\n  \"name\": \"Liquidacion\",\n  \"description\": \"25% de descuento\",\n  \"product_id\": 3,\n  \"valid_since\": 1609864739000,\n  \"valid_until\": 1609864739000\n}'",
+							"value": "{\n  \"id\": 5,\n  \"name\": \"Liquidacion\",\n  \"description\": \"25% de descuento\",\n  \"product_id\": 3,\n  \"valid_since\": 1609864739000,\n  \"valid_until\": 1609864739000\n}",
 							"type": "text"
 						}
 					]
